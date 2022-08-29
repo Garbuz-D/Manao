@@ -1,4 +1,4 @@
-async function logout(){
+      async function logout(){
 	let response = await fetch('end_session.php', {
 	method: 'POST',
 	

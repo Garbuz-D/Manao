@@ -9,7 +9,7 @@ $db = new JSONDB('db.json');
 
 $user;
 foreach($_POST as $key => $value){
-  $user[$key] = trim($value);
+  $user[$key] = htmlspecialchars(trim($value));
 }
 
 if(strlen($user[login]) < 6){

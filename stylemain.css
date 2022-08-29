@@ -1,0 +1,24 @@
+form {
+  margin-top: 80px;
+}
+
+label:not(.error){
+  display: inline-block;
+  width:15%;
+}
+
+input {
+  margin-top: 10px;
+  width: 25%;
+  height: 20px;
+} 
+
+[type='submit'] {
+  margin-left: 10%;
+  width:10%;
+  height: 30px;
+}
+
+.error {
+  color: red; 
+}
