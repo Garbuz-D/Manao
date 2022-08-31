@@ -1,4 +1,4 @@
-      async function logout(){
+      function logout(){
 	let response = await fetch('end_session.php', {
 	method: 'POST',
 	
@@ -9,7 +9,7 @@
 	window.location.replace('../index.php');
       }   
 
-      async function formProc(formId){
+      function formProc(formId){
 	fetch(formId + '_proc.php', {
 	method: 'POST',
 	body: new FormData(document.getElementById(formId)),
