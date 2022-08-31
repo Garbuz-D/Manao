@@ -6,30 +6,26 @@
         if(!response.ok){
           alert('server error');
         }
-        document.getElementById('logout').style.display = 'none';
-	document.querySelector('main').style.display = 'block';
-	document.querySelector('h1').innerHTML = 'Welcome. Log in or register';
+	window.location.replace('../index.php');
       }   
 
       async function formProc(formId){
-	let response = await fetch(formId + '_proc.php', {
+	fetch(formId + '_proc.php', {
 	method: 'POST',
 	body: new FormData(document.getElementById(formId)),
-      });
+      }).then(response => {
         if(!response.ok){
           alert('server error');
-        }else{
-	  let msg = await response.json();
+        }else{ 
+	  response.json().then(msg => {
           if(!msg['OK']){
 	    Object.keys(msg['errors']).forEach(key => {
 	      document.getElementById(formId + '_' + key + '_err').innerHTML = msg['errors'][key];
    	    });
           }else{
-            document.getElementById('logout').style.display = 'block';
-	    document.querySelector('main').style.display = 'none';
-	    document.getElementById('reg').reset();
-	    document.getElementById('auth').reset();
-	    document.querySelector('h1').innerHTML = 'Hello ' + document.cookie.match(/(?<=(name=))[a-zA-Z]+(?=[;$ ]?)/g);
+            window.location.replace('../authorized.php');
           }
+         });
         }
+       });
       }

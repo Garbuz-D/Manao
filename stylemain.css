@@ -13,12 +13,12 @@ input {
   height: 20px;
 } 
 
-[type='submit'] {
+[type='button'] {
   margin-left: 10%;
   width:10%;
   height: 30px;
 }
 
-.error {
+noscript, .error {
   color: red; 
 }
