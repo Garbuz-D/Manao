@@ -27,7 +27,7 @@ if(isset($_COOKIE['PHPSESSID'])){
 	<h2>Sign in</h2>
   	<label for='auth_login'>login:</label> <input type="text" name='login' id='auth_login'> <label class="error" id="auth_login_err" for=auth1"></label> <br>
         <label for='ath_password'>password:</label> <input type='password' id="auth_password" name='password'> <label class="error" id="auth_password_err" for=auth2"></label> <br>
-	<input type="button" id="auth_submit" value="sign in" onclick="formProc('auth');">
+	<button type='button' id='auth_submit' name='auth'>sign in</button>
       </form>
       
       <form id="reg">
@@ -37,7 +37,7 @@ if(isset($_COOKIE['PHPSESSID'])){
         <label for='confirm_password'>confirm password:</label> <input type="password" id='confirm_password' name='confirm_password'> <label class="error" id="reg_confirm_password_err" for=reg3"></label> <br>
         <label for='email'>email:</label> <input type="text" id='email' name='email'> <label class="error" id="reg_email_err" for=reg4"></label> <br>
         <label for='name'>name:</label> <input type="text" id='name' name='name'> <label class="error" id="reg_name_err" for=reg5"></label> <br>
-	<input type="button" id="reg_submit" value="sign up" onclick="formProc('reg');">
+	<button type='button' id='reg_submit' name='reg'>sign up</button>
       </form>
     </main>
 
